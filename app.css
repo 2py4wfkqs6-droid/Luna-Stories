@@ -58,3 +58,22 @@
 .reader .choicebtn.gold{border-color:#e6c08b;background:linear-gradient(180deg,#65475c,#2b2945)}
 .reader .stagevignette{background:linear-gradient(180deg,#0c081555,transparent 27%,transparent 54%,#120c1a68 85%,#0b0813ac)}
 @media(max-height:740px){.reader .dialog{padding:24px 17px 12px}.reader .dialog .text{font-size:16px}.reader .choicebtn{min-height:47px}}
+
+/* Wardrobe art direction: portrait-centered layered game interface */
+.wardrobe-page{margin:-8px -8px 0;position:relative}
+.wardrobe-heading{display:flex;justify-content:center;align-items:center;gap:20px;padding:8px 0 14px}
+.wardrobe-heading h1{font:600 35px/1 var(--fancy);margin:0;color:#fff0ed;text-shadow:0 0 17px #c681e0}
+.wardrobe-ornament{font:28px var(--fancy);color:#efcba4}
+.wardrobe-stage{position:relative;height:min(61dvh,630px);min-height:390px;overflow:hidden;border:1px solid #b98fc28a;border-radius:18px;background:linear-gradient(180deg,#23112a4d,#1c0f28c4),url('./assets/bg_chamber.jpg') center/cover;box-shadow:0 10px 35px #0009}
+.wardrobe-halo{position:absolute;left:50%;top:17%;width:75%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,#e7b4d544 0%,#c481ca18 40%,transparent 73%);filter:blur(18px)}
+.wardrobe-character{position:absolute;bottom:-8%;left:50%;transform:translateX(-50%);height:110%;width:auto;max-width:none;object-fit:contain;filter:drop-shadow(0 15px 25px #090411a8)}
+.wardrobe-rail{position:absolute;left:8px;top:18%;display:flex;flex-direction:column;gap:9px;padding:10px 6px;border-radius:23px;background:#2c173bbd;border:1px solid #b68ac26d}
+.wardrobe-rail span{display:grid;place-items:center;width:32px;height:35px;border-radius:50%;font-size:22px;color:#f3d5e9;background:#7651826b}
+.wardrobe-bottom{position:absolute;bottom:0;left:0;right:0;padding:32px 11px 13px;background:linear-gradient(transparent,#160d22ef 38%,#140b1ff5)}
+.wardrobe-caption{text-align:center;font:600 23px var(--fancy);color:#fff0eb;text-shadow:0 2px 9px #000}
+.wardrobe-thumbnails{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:9px}
+.wardrobe-thumb{border:1px solid #b18ab5a6;border-radius:10px;padding:7px 3px;background:linear-gradient(140deg,var(--swatch),#251632);box-shadow:inset 0 0 25px #14091a8a;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:64px}
+.wardrobe-thumb span{font-size:25px;text-shadow:0 2px 7px #000a}
+.wardrobe-thumb small{font-size:9px;color:white;text-shadow:0 1px 4px #000}
+.wardrobe-thumb.selected{border:2px solid #ffd4a9;box-shadow:0 0 15px #f5b4e3b5,inset 0 0 18px #f9d6b333}
+.wardrobe-action{padding:14px 8px 0;display:grid;gap:8px}
