@@ -28,3 +28,33 @@
 .reader .dialoggroup{z-index:10}
 .reader .fadecurtain{pointer-events:none}
 @media(prefers-reduced-motion:reduce){.reader .actor,.reader .stagebg,.reader .choicebtn{animation:none!important;transition:none!important}}
+
+/* Reference-matched fantasy visual-novel UI pass, 2026-11-09. */
+:root{--night:#160d26;--deep:#10091d;--surface:#30203e;--glass:#2d193de8;--edge:#d9a8e075;--gold:#f5cfa0;--rose:#f6acd6;--lilac:#c783fa}
+#app{background:radial-gradient(ellipse at 48% 6%,#5b356b 0%,#2a163d 38%,#12091f 90%)}
+#app::before{background-image:radial-gradient(#ffd7fa50 .8px,transparent 1.5px);background-size:37px 47px;opacity:.34}
+.page:not(.nopad){background:radial-gradient(ellipse at 48% 2%,#713d7752,transparent 54%)}
+.brand{font-size:34px;text-shadow:0 2px 15px #ed9ce052}
+.brand span{color:#ffd5e5}
+.btn.primary{background:linear-gradient(105deg,#ffacaa 0%,#e889ca 46%,#a94af2 100%);border:1px solid #ffd5e2aa;border-radius:27px;box-shadow:0 0 0 2px #6b3c7e75 inset,0 0 19px #cb65e280,0 9px 25px #0805138c;color:#fff8fc;text-shadow:0 1px 3px #672b64}
+.btn.secondary{border:1px solid #e2acd6aa;box-shadow:inset 0 1px #ffffff25}
+.storycard,.mini-cover,.topcover{border-color:#c89de1a6;box-shadow:0 0 0 2px #f6d2ff13 inset,0 15px 38px #090714a0}
+.storycard.feature{height:min(52dvh,440px)}
+.storybody h2,.topcovertext h1{color:#fff0e5;text-shadow:0 2px 14px #110818}
+.tab.sel{background:linear-gradient(110deg,#b768c6,#783ba4);box-shadow:0 0 16px #c76be67a}
+.nav{background:linear-gradient(180deg,#2e183eec,#190e28f7);border-top:1px solid #c68ad58a;box-shadow:0 -9px 30px #0a05137a}
+.navitem.active{color:#ffe1f3;text-shadow:0 0 12px #df84f1}
+.genrec.selected,.outfitbtn.selected{box-shadow:0 0 0 1px #ffc5ee inset,0 0 20px #c778ee90}
+.hero-preview{border-color:#d3a8dcb3;box-shadow:0 12px 30px #0008}
+.dialoggroup{bottom:calc(22px + env(safe-area-inset-bottom));left:13px;right:13px}
+.reader .dialog{background:linear-gradient(145deg,#554a47ef,#3d3637f4);border:1px solid #8a8d91;border-radius:7px;box-shadow:0 0 0 2px #183747 inset,0 0 0 4px #151a2ac4 inset,0 15px 30px #000a;padding:30px 21px 18px;backdrop-filter:blur(9px)}
+.reader .dialog::before,.reader .dialog::after{content:'❧';position:absolute;color:#4b91a9;font:28px Georgia,serif;text-shadow:0 1px 3px #000;pointer-events:none}
+.reader .dialog::before{top:-15px;left:-12px;transform:rotate(-38deg)}
+.reader .dialog::after{right:-12px;bottom:-15px;transform:rotate(140deg)}
+.reader .nameplate{top:-22px;left:18px;min-width:150px;border-radius:8px;background:linear-gradient(180deg,#244354,#12232f);border:1px solid #568198;box-shadow:0 0 0 3px #0b1b2c inset,0 3px 12px #0009;color:#f1f3f4;font:600 19px/1.2 var(--ui);padding:10px 18px}
+.reader .dialog .text{font:400 clamp(17px,4.5vw,21px)/1.45 var(--ui);color:#f0edf0}
+.reader .dialog.narrator .text{font-style:italic}
+.reader .choicebtn{border-radius:8px;background:linear-gradient(180deg,#254454f5,#102733f8);border:1px solid #507d95;box-shadow:0 0 0 3px #10232f inset,0 5px 15px #0009;color:#f1f0f4;font-size:14px}
+.reader .choicebtn.gold{border-color:#e6c08b;background:linear-gradient(180deg,#65475c,#2b2945)}
+.reader .stagevignette{background:linear-gradient(180deg,#0c081555,transparent 27%,transparent 54%,#120c1a68 85%,#0b0813ac)}
+@media(max-height:740px){.reader .dialog{padding:24px 17px 12px}.reader .dialog .text{font-size:16px}.reader .choicebtn{min-height:47px}}
