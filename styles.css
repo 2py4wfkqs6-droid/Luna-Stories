@@ -152,3 +152,167 @@ button { font: inherit; }
   body { padding: 14px 0; background: radial-gradient(ellipse at 50% 45%, #382145, #100a16 70%); }
   .app { height: min(calc(100svh - 28px), 932px); border: 1px solid rgba(240, 195, 223, .28); border-radius: 22px; }
 }
+
+/* Wardrobe paper-doll screen */
+.wardrobe-screen {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 var(--bar-height);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(22, 10, 31, .1), rgba(24, 9, 30, .22));
+}
+.wardrobe-screen[hidden] { display: none; }
+.wardrobe-heading {
+  position: absolute;
+  z-index: 4;
+  top: max(22px, env(safe-area-inset-top));
+  left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #f6e1ce;
+  text-shadow: 0 2px 12px #19091d;
+}
+.wardrobe-heading h1 {
+  margin: 0;
+  font-size: clamp(30px, 8vw, 40px);
+  line-height: 1;
+  font-weight: 600;
+}
+.heading-flourish { color: #f1c4dc; font-size: 15px; text-shadow: 0 0 9px #f590dc; }
+.wardrobe-stage {
+  position: absolute;
+  inset: 70px 0 126px;
+}
+.heroine-stack {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  filter: drop-shadow(0 9px 25px rgba(10, 2, 15, .62));
+}
+.heroine-base, .garment {
+  position: absolute;
+  width: min(100%, 430px);
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.garment {
+  opacity: 0;
+  transition: opacity .42s ease, filter .42s ease;
+  pointer-events: none;
+}
+.garment.is-visible { opacity: 1; }
+.wardrobe-categories {
+  position: absolute;
+  z-index: 3;
+  top: 20%;
+  left: 8px;
+  display: grid;
+  gap: 9px;
+}
+.category-button {
+  width: 59px;
+  min-height: 62px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  padding: 5px 2px;
+  border: 1px solid rgba(235, 177, 222, .58);
+  border-radius: 15px;
+  color: #f7dfd2;
+  background: rgba(36, 16, 47, .78);
+  font-size: 12px;
+  line-height: 1;
+  box-shadow: inset 0 0 12px rgba(224, 136, 209, .12), 0 2px 8px rgba(8, 3, 13, .32);
+}
+.category-button:disabled { opacity: .58; }
+.category-button.is-current { border-color: #f4b6ec; box-shadow: 0 0 12px rgba(245, 135, 224, .42), inset 0 0 12px rgba(245, 135, 224, .16); }
+.category-glyph { position: relative; width: 18px; height: 20px; display: block; }
+.dress-glyph::before {
+  content: ""; position: absolute; left: 5px; top: 0; width: 8px; height: 5px;
+  border: 1px solid #f4d3df; border-radius: 5px 5px 1px 1px;
+}
+.dress-glyph::after {
+  content: ""; position: absolute; left: 1px; top: 5px; width: 16px; height: 13px;
+  background: linear-gradient(145deg, #f7d2eb, #9d4e9a); clip-path: polygon(37% 0,63% 0,100% 100%,0 100%);
+  border-bottom: 1px solid #f6d8aa;
+}
+.gem-glyph::before {
+  content: ""; position: absolute; inset: 2px 2px 4px; transform: rotate(45deg);
+  border: 1px solid #f2d2fa; background: linear-gradient(135deg, #d9b6fa, #814da8);
+  clip-path: polygon(50% 0,100% 42%,72% 100%,25% 100%,0 42%);
+}
+.outfit-selector {
+  position: absolute;
+  z-index: 3;
+  top: 19%;
+  right: 8px;
+  display: grid;
+  gap: 10px;
+}
+.outfit-option {
+  position: relative;
+  width: 62px;
+  height: 88px;
+  padding: 4px;
+  border: 1px solid rgba(232, 186, 221, .66);
+  border-radius: 13px;
+  background: rgba(32, 13, 42, .86);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(8, 3, 12, .35);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.outfit-option img { width: 100%; height: 100%; object-fit: contain; }
+.outfit-option.is-selected {
+  transform: scale(1.06);
+  border: 1.5px solid #ffb5ed;
+  box-shadow: 0 0 14px rgba(255, 121, 220, .65), inset 0 0 12px rgba(239, 137, 213, .2);
+}
+.outfit-check { display: none; position: absolute; top: 1px; right: 4px; color: #fff0d8; text-shadow: 0 0 7px #ff84e2; font-size: 13px; }
+.outfit-option.is-selected .outfit-check { display: block; }
+.wardrobe-details {
+  position: absolute;
+  z-index: 4;
+  left: 10px; right: 10px; bottom: 10px;
+  min-height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 14px;
+  border: 1px solid rgba(241, 194, 218, .76);
+  border-radius: 20px;
+  background: linear-gradient(120deg, rgba(42, 18, 51, .93), rgba(28, 11, 39, .88));
+  box-shadow: inset 0 0 20px rgba(228, 145, 210, .11), 0 4px 16px rgba(8, 3, 13, .35);
+}
+.outfit-copy { min-width: 0; display: grid; gap: 3px; color: #f2dfcf; }
+.detail-kicker { color: #d9b6d3; font-size: 12px; }
+.outfit-copy strong { font-size: clamp(17px, 4.8vw, 22px); font-weight: 600; white-space: nowrap; }
+.outfit-copy span:last-child { font-size: 14px; color: #e8c8df; }
+.wear-button {
+  flex: 0 0 auto;
+  min-width: 106px;
+  padding: 11px 16px;
+  border: 1px solid #ffd4b1;
+  border-radius: 30px;
+  color: #fff1e4;
+  background: linear-gradient(105deg, #ed659c, #ad35c0 72%, #7844ce);
+  box-shadow: 0 0 12px rgba(238, 99, 206, .35), inset 0 1px 3px rgba(255,255,255,.45);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, filter .2s ease;
+}
+.wear-button:active { transform: scale(.96); filter: brightness(1.15); }
+.app.is-wardrobe .wardrobe-screen { display: block; }
+@media (max-height: 720px) {
+  .wardrobe-stage { inset: 60px 0 112px; }
+  .outfit-option { height: 72px; }
+  .wardrobe-details { min-height: 92px; padding: 9px 11px; }
+  .outfit-copy strong { font-size: 17px; }
+}

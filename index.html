@@ -14,6 +14,46 @@
 <body>
   <main class="app" aria-label="Luna Stories">
     <div class="scene" aria-hidden="true"></div>
+    <section class="wardrobe-screen" id="wardrobe-screen" aria-label="Гардероб" hidden>
+      <header class="wardrobe-heading">
+        <span class="heading-flourish" aria-hidden="true">✦</span>
+        <h1>Гардероб</h1>
+        <span class="heading-flourish" aria-hidden="true">✦</span>
+      </header>
+      <div class="wardrobe-stage">
+        <div class="heroine-stack" aria-label="Примерка наряда на героине">
+          <img class="heroine-base" src="assets/wardrobe/heroine-base.webp" alt="Героиня">
+          <img class="garment is-visible" data-garment="moonlight" src="assets/wardrobe/dress-moonlight.webp" alt="">
+          <img class="garment" data-garment="crimson" src="assets/wardrobe/dress-crimson.webp" alt="">
+        </div>
+        <div class="wardrobe-categories" aria-label="Категория одежды">
+          <button class="category-button is-current" type="button" aria-pressed="true">
+            <span class="category-glyph dress-glyph" aria-hidden="true"></span><span>Платья</span>
+          </button>
+          <button class="category-button" type="button" aria-pressed="false" disabled>
+            <span class="category-glyph gem-glyph" aria-hidden="true"></span><span>Образы</span>
+          </button>
+        </div>
+        <div class="outfit-selector" aria-label="Выбор платья">
+          <button class="outfit-option is-selected" type="button" data-outfit="moonlight" aria-pressed="true" aria-label="Платье Лунный свет">
+            <img src="assets/wardrobe/dress-moonlight.webp" alt="">
+            <span class="outfit-check" aria-hidden="true">✦</span>
+          </button>
+          <button class="outfit-option" type="button" data-outfit="crimson" aria-pressed="false" aria-label="Платье Рубиновая роза">
+            <img src="assets/wardrobe/dress-crimson.webp" alt="">
+            <span class="outfit-check" aria-hidden="true">✦</span>
+          </button>
+        </div>
+      </div>
+      <div class="wardrobe-details">
+        <div class="outfit-copy">
+          <span class="detail-kicker">Выбранный наряд</span>
+          <strong id="outfit-name">Платье «Лунный свет»</strong>
+          <span id="outfit-bonus">+2 к уверенности</span>
+        </div>
+        <button class="wear-button" id="wear-button" type="button">Надеть</button>
+      </div>
+    </section>
     <nav class="bottom-menu" aria-label="Основное меню">
       <div class="menu-items" role="tablist" aria-label="Разделы Luna Stories">
         <img class="selection-frame" src="assets/menu-active-frame.png" alt="" aria-hidden="true">
@@ -26,7 +66,7 @@
           <span class="menu-label">Гардероб</span>
         </button>
         <button class="menu-item is-active" type="button" role="tab" aria-selected="true" aria-current="page" aria-label="Награды" data-tab="rewards">
-          <img class="menu-icon" src="assets/menu-icons/profile.png" alt="">
+          <img class="menu-icon" src="assets/menu-icons/rewards.png" alt="">
           <span class="menu-label">Награды</span>
         </button>
         <button class="menu-item" type="button" role="tab" aria-selected="false" aria-label="Коллекции" data-tab="collections">
@@ -34,7 +74,7 @@
           <span class="menu-label">Коллекции</span>
         </button>
         <button class="menu-item" type="button" role="tab" aria-selected="false" aria-label="Профиль" data-tab="profile">
-          <img class="menu-icon" src="assets/menu-icons/rewards.png" alt="">
+          <img class="menu-icon" src="assets/menu-icons/profile.png" alt="">
           <span class="menu-label">Профиль</span>
         </button>
       </div>
