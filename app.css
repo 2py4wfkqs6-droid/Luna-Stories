@@ -196,3 +196,12 @@ body{background:#130b1b;color:#fff4f7;background-image:radial-gradient(ellipse a
 .genrec:nth-child(8){background-image:linear-gradient(90deg,#190c21d8 0%,#190c2166 48%,#190c2007 100%),url("./assets/hero-ivory.png")}
 .genrec:nth-child(9){background-image:linear-gradient(90deg,#190c21df 0%,#190c2172 48%,#190c200b 100%),url("./assets/kai-portrait.png")}
 .genrec:nth-child(10){background-image:linear-gradient(90deg,#190c21df 0%,#190c2172 48%,#190c200b 100%),url("./assets/lev-portrait.png")}
+
+
+/* Use only character PNGs present in the published assets directory. */
+.genrec{background-size:cover,auto 190%;background-position:center,right top}
+.genrec:nth-child(2){background-image:linear-gradient(90deg,#190c21dc 0%,#190c216e 47%,#190c2005 100%),url("./assets/lev-transparent-v2.png")}
+.genrec:nth-child(3){background-image:linear-gradient(90deg,#190c21dc 0%,#190c216e 47%,#190c2005 100%),url("./assets/heroine-transparent-v2.png")}
+.genrec:nth-child(5),.genrec:nth-child(7),.genrec:nth-child(9){background-image:linear-gradient(90deg,#190c21dc 0%,#190c216e 47%,#190c2005 100%),url("./assets/kai-transparent-v2.png")}
+.genrec:nth-child(6),.genrec:nth-child(10){background-image:linear-gradient(90deg,#190c21dc 0%,#190c216e 47%,#190c2005 100%),url("./assets/lev-transparent-v2.png")}
+.genrec:nth-child(8){background-image:linear-gradient(90deg,#190c21dc 0%,#190c216e 47%,#190c2005 100%),url("./assets/heroine-transparent-v2.png")}
