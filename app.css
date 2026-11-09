@@ -160,3 +160,27 @@ body{background:#130b1b;color:#fff4f7;background-image:radial-gradient(ellipse a
 .endpage{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:stretch;background:radial-gradient(ellipse at 50% 20%,#553361,#1b1026 65%);border:1px solid #e8c18c;border-radius:7px;padding:32px 22px;box-shadow:0 0 0 3px #281532,0 0 0 4px #d9ae77}.endpage .award{font-size:66px;text-shadow:0 0 24px #ffdb9a}.endpage h1{font-size:48px;color:#ffe9d8}.modal{border:1px solid #efce99;border-radius:8px;background:linear-gradient(145deg,#51305d,#251530);box-shadow:0 0 0 3px #281532,0 0 0 4px #d6ad79,0 22px 70px #000b}
 @media(max-width:390px){.container{padding-left:12px;padding-right:12px}.storybody h2{font-size:37px}.genrec{min-height:125px}}
 
+
+
+/* Visual pass 2: illustrated onboarding and image-led genre cards */
+.onbg{opacity:0}
+.onboard{isolation:isolate;background:#160d22}
+.onboard::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#13091c27 0%,#180b26a8 58%,#160a22 100%),url("./assets/card.jpg") center 18%/cover no-repeat;transform:scale(1.015)}
+.onboard::after{z-index:1;background:linear-gradient(180deg,#10081712 0%,transparent 27%,#1b0d28b8 72%,#140820 100%)}
+.on-content{z-index:2}
+.genreg{gap:9px;margin:19px 0 22px}
+.genrec{min-height:clamp(105px,31vw,145px);padding:10px 11px;border:1px solid #e0b88caa;border-radius:9px;justify-content:flex-end;align-items:flex-start;background-color:#27152f;background-position:center,right 35%;background-repeat:no-repeat;background-size:cover,auto 148%;font:600 16px/1.05 var(--fancy);text-align:left;text-shadow:0 2px 8px #120817;box-shadow:0 4px 14px #09050e8c}
+.genrec .symbol{display:none}
+.genrec:nth-child(1){background-image:linear-gradient(0deg,#160b20e8 0%,#160b2070 42%,#160b2000 100%),url("./assets/card.jpg");background-position:center,center 18%;background-size:cover}
+.genrec:nth-child(2){background-image:linear-gradient(90deg,#190c21ef 0%,#190c2190 48%,#190c2010 100%),url("./assets/lev-transparent-v2.png")}
+.genrec:nth-child(3){background-image:linear-gradient(90deg,#190c21ea 0%,#190c2180 50%,#190c2010 100%),url("./assets/heroine-transparent-v2.png")}
+.genrec:nth-child(4){background-image:linear-gradient(0deg,#160b20e8 0%,#160b2070 42%,#160b2000 100%),url("./assets/cover.jpg");background-position:center,center 18%;background-size:cover}
+.genrec:nth-child(5){background-image:linear-gradient(90deg,#190c21eb 0%,#190c217d 52%,#190c200d 100%),url("./assets/kai-transparent-v2.png")}
+.genrec:nth-child(6){background-image:linear-gradient(90deg,#190c21e8 0%,#190c2180 50%,#190c200d 100%),url("./assets/lev-transparent-v2.png")}
+.genrec:nth-child(7){background-image:linear-gradient(90deg,#190c21e8 0%,#190c2180 50%,#190c200d 100%),url("./assets/kai-transparent-v2.png")}
+.genrec:nth-child(8){background-image:linear-gradient(90deg,#190c21e8 0%,#190c2180 50%,#190c200d 100%),url("./assets/heroine-transparent-v2.png")}
+.genrec:nth-child(9){background-image:linear-gradient(90deg,#190c21e8 0%,#190c2180 50%,#190c200d 100%),url("./assets/kai-transparent-v2.png")}
+.genrec:nth-child(10){background-image:linear-gradient(90deg,#190c21e8 0%,#190c2180 50%,#190c200d 100%),url("./assets/lev-transparent-v2.png")}
+.genrec.selected{border:2px solid #ffb8e5;box-shadow:0 0 0 1px #fff4 inset,0 0 18px #e379d5a6}
+.genrec.selected::after{width:21px;height:21px}
+@media(max-width:390px){.genreg{gap:8px}.genrec{min-height:116px;font-size:15px}}
