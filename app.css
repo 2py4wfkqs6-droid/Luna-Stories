@@ -127,3 +127,20 @@ button:active{filter:brightness(1.12)}
 @media(max-width:380px){.page{padding-left:12px;padding-right:12px}.brand{font-size:25px}.res{padding:6px;font-size:11px}.navitem{font-size:8px}.reader .dialoggroup{left:9px;right:9px}.reader .dialog .text{font-size:16px}.reader .nameplate{font-size:16px}}
 @media(min-width:541px){body{background:radial-gradient(ellipse at center,#36204c,#0d0915)}#app{box-shadow:0 0 75px #000a}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Character choreography: enter, emotion shift, and gentle idle breathing. */
+@keyframes lunaEnterLeft{0%{opacity:0;transform:translate3d(-55px,14px,0) scale(.985)}100%{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes lunaEnterRight{0%{opacity:0;transform:translate3d(55px,14px,0) scale(.985)}100%{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes lunaEnterCenter{0%{opacity:0;transform:translate3d(-50%,20px,0) scale(.98)}100%{opacity:1;transform:translate3d(-50%,0,0) scale(1)}}
+@keyframes lunaEmoteSide{0%{opacity:.4;filter:brightness(.85) blur(2px)}100%{opacity:1;filter:brightness(1) blur(0)}}
+@keyframes lunaIdleSide{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(0,-3px,0) scale(1.004)}}
+@keyframes lunaIdleCenter{0%,100%{transform:translate3d(-50%,0,0) scale(1)}50%{transform:translate3d(-50%,-3px,0) scale(1.004)}}
+.reader .actor.actor-enter.left{animation:lunaEnterLeft .65s cubic-bezier(.16,.8,.2,1) both,lunaIdleSide 6s ease-in-out .65s infinite}
+.reader .actor.actor-enter.right{animation:lunaEnterRight .65s cubic-bezier(.16,.8,.2,1) both,lunaIdleSide 6s ease-in-out .65s infinite}
+.reader .actor.actor-enter.center{animation:lunaEnterCenter .65s cubic-bezier(.16,.8,.2,1) both,lunaIdleCenter 6s ease-in-out .65s infinite}
+.reader .actor.actor-emote.left,.reader .actor.actor-emote.right{animation:lunaEmoteSide .35s ease-out both,lunaIdleSide 6s ease-in-out .35s infinite}
+.reader .actor.actor-emote.center{transform:translateX(-50%);animation:lunaEmoteSide .35s ease-out both,lunaIdleCenter 6s ease-in-out .35s infinite}
+.reader .actor.actor-hold.left,.reader .actor.actor-hold.right{animation:lunaIdleSide 6s ease-in-out infinite}
+.reader .actor.actor-hold.center{animation:lunaIdleCenter 6s ease-in-out infinite}
+.reader .actor{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+@media(prefers-reduced-motion:reduce){.reader .actor.actor-enter,.reader .actor.actor-emote,.reader .actor.actor-hold{animation:none!important}.reader .actor.center{transform:translateX(-50%)}}
