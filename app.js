@@ -43,7 +43,6 @@ outfitOptions.forEach((option) => {
       candidate.setAttribute("aria-pressed", String(selected));
     });
     garments.forEach((garment) => garment.classList.toggle("is-visible", garment.dataset.garment === pendingOutfit));
-    document.querySelector(".arm-jewelry").classList.toggle("is-visible", pendingOutfit === "starlit");
     outfitName.textContent = outfits[pendingOutfit].name;
     outfitBonus.textContent = outfits[pendingOutfit].bonus;
     wearButton.textContent = "Надеть";
