@@ -1,1 +1,45 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#180e25"><meta name="apple-mobile-web-app-capable" content="yes"><title>Luna Stories | Тени Эвермора</title><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./app.css?v=visual-20261109-2"></head><body><div id="app"></div><div id="toast" role="status" aria-live="polite"></div><script src="./story.js" defer></script><script src="./app.js" defer></script></body></html>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#180d23">
+  <meta name="description" content="Luna Stories - интерактивные романтические истории">
+  <title>Luna Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app" aria-label="Luna Stories">
+    <div class="scene" aria-hidden="true"></div>
+    <nav class="bottom-menu" aria-label="Основное меню">
+      <div class="menu-items" role="tablist" aria-label="Разделы Luna Stories">
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-label="Истории" data-tab="stories">
+          <img class="menu-icon" src="assets/menu-icons/stories.png" alt="">
+          <span class="menu-label">Истории</span>
+        </button>
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-label="Гардероб" data-tab="wardrobe">
+          <img class="menu-icon" src="assets/menu-icons/wardrobe.png" alt="">
+          <span class="menu-label">Гардероб</span>
+        </button>
+        <button class="menu-item is-active" type="button" role="tab" aria-selected="true" aria-current="page" aria-label="Награды" data-tab="rewards">
+          <img class="selection-frame" src="assets/menu-active-frame.png" alt="" aria-hidden="true">
+          <img class="menu-icon" src="assets/menu-icons/rewards.png" alt="">
+          <span class="menu-label">Награды</span>
+        </button>
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-label="Коллекции" data-tab="collections">
+          <img class="menu-icon" src="assets/menu-icons/collections.png" alt="">
+          <span class="menu-label">Коллекции</span>
+        </button>
+        <button class="menu-item" type="button" role="tab" aria-selected="false" aria-label="Профиль" data-tab="profile">
+          <img class="menu-icon" src="assets/menu-icons/profile.png" alt="">
+          <span class="menu-label">Профиль</span>
+        </button>
+      </div>
+    </nav>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
