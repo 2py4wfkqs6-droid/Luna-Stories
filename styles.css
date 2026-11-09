@@ -27,7 +27,7 @@ button { font: inherit; }
   z-index: 0;
   background-image:
     linear-gradient(180deg, rgba(15, 7, 21, .04) 0%, rgba(19, 8, 25, .02) 54%, rgba(20, 8, 27, .18) 76%, rgba(17, 7, 24, .4) 100%),
-    url("assets/luna-background.webp");
+    url("assets/luna-background.webp?v=hd2");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
