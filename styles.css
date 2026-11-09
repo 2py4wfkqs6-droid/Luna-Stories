@@ -316,3 +316,15 @@ button { font: inherit; }
   .wardrobe-details { min-height: 92px; padding: 9px 11px; }
   .outfit-copy strong { font-size: 17px; }
 }
+
+.arm-jewelry {
+  position: absolute;
+  width: min(100%, 430px);
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+.arm-jewelry.is-visible { opacity: 1; }

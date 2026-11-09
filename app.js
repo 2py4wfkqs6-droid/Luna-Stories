@@ -10,7 +10,9 @@ const wearButton = document.querySelector("#wear-button");
 
 const outfits = {
   moonlight: { name: "Платье «Лунный свет»", bonus: "+2 к уверенности" },
-  crimson: { name: "Платье «Рубиновая роза»", bonus: "+3 к обаянию" }
+  crimson: { name: "Платье «Рубиновая роза»", bonus: "+3 к обаянию" },
+  starlit: { name: "Платье «Звёздный бархат»", bonus: "+2 к уверенности" },
+  orchid: { name: "Платье «Лунная орхидея»", bonus: "+3 к очарованию" }
 };
 let pendingOutfit = "moonlight";
 
@@ -41,6 +43,7 @@ outfitOptions.forEach((option) => {
       candidate.setAttribute("aria-pressed", String(selected));
     });
     garments.forEach((garment) => garment.classList.toggle("is-visible", garment.dataset.garment === pendingOutfit));
+    document.querySelector(".arm-jewelry").classList.toggle("is-visible", pendingOutfit === "starlit");
     outfitName.textContent = outfits[pendingOutfit].name;
     outfitBonus.textContent = outfits[pendingOutfit].bonus;
     wearButton.textContent = "Надеть";
