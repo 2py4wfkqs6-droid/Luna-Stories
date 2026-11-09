@@ -77,3 +77,53 @@
 .wardrobe-thumb small{font-size:9px;color:white;text-shadow:0 1px 4px #000}
 .wardrobe-thumb.selected{border:2px solid #ffd4a9;box-shadow:0 0 15px #f5b4e3b5,inset 0 0 18px #f9d6b333}
 .wardrobe-action{padding:14px 8px 0;display:grid;gap:8px}
+
+/* Integrated mobile UI polish - consistent storybook layout */
+:root{color-scheme:dark}
+html{scroll-behavior:smooth}
+button{touch-action:manipulation}
+button:active{filter:brightness(1.12)}
+.page{isolation:isolate}
+.page::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 45% 5%,#a568b51b,transparent 50%),radial-gradient(ellipse at 90% 75%,#7836a81c,transparent 50%)}
+.topbar{position:relative;z-index:2}
+.storycard.feature{border:1px solid #e4b6d6b0;border-radius:19px}
+.storycard.feature::before{content:'✧';position:absolute;right:14px;top:10px;z-index:2;font-size:28px;color:#ffe3b6;text-shadow:0 0 12px #f1b8eb}
+.storycard.feature .storybody{bottom:19px}
+.storycard.feature .storybody h2{font-weight:700;font-size:clamp(39px,10vw,52px);line-height:.94;max-width:250px}
+.storygrid{gap:12px}
+.minicard{min-width:0}
+.mini-cover{overflow:hidden}
+.mini-cover img{transition:transform .5s ease}
+.minicard:active .mini-cover img{transform:scale(1.04)}
+.genreg{gap:11px}
+.genrec{position:relative;overflow:hidden;transition:box-shadow .2s,border-color .2s}
+.genrec.selected::after{content:'✓';position:absolute;top:6px;right:8px;display:grid;place-items:center;border-radius:50%;width:19px;height:19px;background:#db77c3;color:#fff;font-size:12px;box-shadow:0 0 11px #f6b5f1}
+.topcover{box-shadow:0 18px 42px #0009;border:1px solid #efc1e091}
+.chapterrow{transition:background .2s,border-color .2s}
+.chapterrow:active{background:#c579e020}
+.hero-preview{background:radial-gradient(ellipse at center,#9c668755,transparent 67%),linear-gradient(155deg,#4e315c,#1b1328);overflow:hidden}
+.hero-preview img{filter:drop-shadow(0 12px 20px #0008)}
+.listcard,.relcard,.statbox,.shopitem,.collect{backdrop-filter:blur(9px)}
+.relcard{border-color:#dca3c985;background:linear-gradient(100deg,#6b3b6a55,#251533a8)}
+.relportrait{border:1px solid #edb9db6b}
+.bar{height:8px;background:#1b102a;border:1px solid #a576ac5e}
+.bar i{box-shadow:0 0 12px #e99ac6}
+.endpage{position:relative;isolation:isolate}
+.endpage::before{content:'✧';position:absolute;z-index:-1;top:0;left:50%;transform:translateX(-50%);font:200px var(--fancy);color:#d38fd522;text-shadow:0 0 60px #ce87d86a}
+.endpage .award{text-shadow:0 0 22px #f5bbcf}
+.endpage h1{color:#ffebda;text-shadow:0 2px 16px #d98fc560}
+.reader{overflow:hidden}
+.reader .actor{object-fit:contain;object-position:center bottom}
+.reader .dialoggroup{max-height:76dvh}
+.reader .dialog{min-height:unset}
+.reader .dialog .text{min-height:52px}
+.reader .choicebtn{font-weight:500;letter-spacing:.1px}
+.reader .choicebtn:active{background:linear-gradient(180deg,#396378,#183646)}
+.reader .stagehud{z-index:32}
+.reader .fadecurtain{z-index:40}
+.reader .scene-progress{z-index:33}
+.reader .nameplate{max-width:80%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reader .scenelabel{text-shadow:0 2px 8px #000,0 0 6px #000}
+@media(max-width:380px){.page{padding-left:12px;padding-right:12px}.brand{font-size:25px}.res{padding:6px;font-size:11px}.navitem{font-size:8px}.reader .dialoggroup{left:9px;right:9px}.reader .dialog .text{font-size:16px}.reader .nameplate{font-size:16px}}
+@media(min-width:541px){body{background:radial-gradient(ellipse at center,#36204c,#0d0915)}#app{box-shadow:0 0 75px #000a}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
